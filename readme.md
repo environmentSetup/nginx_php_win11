@@ -30,6 +30,7 @@ mysqld.exe -u root --console
 - [ ] php -v
 ### 建立batch 快速建置``mysql``,``php``,``nginx 環境``
 建立myserver.bat(**# 放在nginx 環境變量資料夾中**)
+注意路徑請變更成您的路徑
 ```
 @echo off
 F:
