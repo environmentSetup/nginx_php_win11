@@ -1,5 +1,33 @@
 #### 全篇參考(https://codefaq.org/server/how-to-install-nginx-php-mysql-on-windows-10/)
 
+# setup
+1. 創立一個 ``webenvironment`` 資料夾
+2. 裡面創 `nginx`,`php`,`mysql` 
+3. 各自下載完，之後將資料夾放入
+- [ ] nginx https://nginx.org/en/download.html
+- [ ] php https://windows.php.net/download/
+![Alt text](image.png)
+- [ ] mysql https://dev.mysql.com/downloads/mysql/
+![Alt text](image-1.png)
+## 更改系統變量
+- [ ] 設定/裝置規格-進階系統設定/進階-環境變量
+- [ ] 進webenvironment 找所有環境變量(**#** **可執行檔存放的上一層資料夾名稱**)
+![Alt text](image-2.png)
+### php
+- [ ] 找尋 php.ini-production 改成 php.ini
+- [ ] 修改php.ini 找尋   ``extension=/path/to/extension/mysqli.so`` 將其 取消註解
+- [ ] 找尋 ``;extension_dir = "ext"`` => ``extension_dir = "F:\webenvironment\php\ext\"``
+### mysql
+- [ ] 設定完環境變量以後
+```
+mysqld -u root --initialize-insecure 
+mysqld.exe -u root --console
+```
+自此 就會有mysql/data 資料夾 mysqld -v 就不會報錯了
+### 檢查
+- [ ] nginx -v **這個剛開始會有錯誤正常**
+- [ ] mysqld -v
+- [ ] php -v
 # ${workDirectory}/conf/nginx.conf 配置
 
 ## 單項配置
@@ -54,7 +82,7 @@
 please commit location and make the configuration like this
 
 ```
-server {
+server {`
         listen       80;
         server_name  localhost;
 
@@ -104,3 +132,4 @@ server {
     }
 
 ```
+
