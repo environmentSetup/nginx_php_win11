@@ -108,6 +108,12 @@ IF "%ERRORLEVEL%"=="0" (
 
 :END
 ```
+# php.ini 配置項
+
+- [ ] uncomment out fileinfo
+- [ ] uncomment out openssl
+- [ ] uncomment out pdo_mysql
+
 RunHiddenConsole(https://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip)
 也放在nginx 資料夾中
 # ${workDirectory}/conf/nginx.conf 配置(#詳情見nginx-server repository)
